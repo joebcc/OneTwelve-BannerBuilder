@@ -30,11 +30,7 @@ eleventyComputed:
 
 <div id="wrapper" style="visibility: inherit; opacity: 0;" >
   <a href="javascript:window.open(window.clickTag)" class="link">
-    {# {{ content | safe }} #}
-     {# {% if svg %}{{svg | svgContents | safe}}{% else %} #}
      {{svg | svgContents | safe}}
-     {# {{"/src/svgs/"+bannerVersion+"-"+bannerWidth+"x"+bannerHeight+".svg"| svgContents | safe}} #}
-     {# {% endif %} #}
   </a>
 </div>
 

@@ -12,13 +12,11 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("./src/static");
     eleventyConfig.addPassthroughCopy("./src/js");
     eleventyConfig.addPassthroughCopy("./src/banners");
+    
     // add naviagtion plugin
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
     eleventyConfig.addPlugin(svgContents);
 
-    // eleventyConfig.addNunjucksFilter("svgImageUrlSetter", function(svg, loc) {
-    //     svg.replace(/:href="/g, `:href="${loc}`)
-    // });
 
     return {
         dir: {
