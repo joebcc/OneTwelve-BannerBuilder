@@ -104,8 +104,8 @@
 
 
   function newAnimationScript(slug) {
-    const src = "./src/_templates/bannerAnimationScriptTemplate.njk";
-    const dest = `./src/_includes/animationScripts/${slug}-script.njk`;
+    const src = "./src/_templates/bannerAnimationScriptTemplate.njk_";
+    const dest = `./src/banners/${slug}/${slug}-script.njk_`;
     fs.copyFile( src, dest, fs.constants.COPYFILE_EXCL, (err) => { 
       if (err) { console.log("Error Found:", err); } 
       else { 

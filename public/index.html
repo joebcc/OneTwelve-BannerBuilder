@@ -29,16 +29,11 @@ iframe {
       <iframe src="/banners/BL-160x600/" height="600" id="BL-160x600"></iframe>
       <button id="BL-160x600" class="p-4 bg-blue-500">Reload</button>
     </li>
-    <li class="mb-24 pt-8" >
-      <a href="/banners/BL-300x600/">BL-300x600</a>
-      <iframe src="/banners/BL-300x600/" height="600" id="BL-300x600"></iframe>
-      <button id="BL-300x600" class="p-4 bg-blue-500">Reload</button>
-    </li>
 
 </ul>
 
 <script>
-[{"key":"BL-160x600","width":"160","height":"600","url":"/banners/BL-160x600/","pluginType":"eleventy-navigation","title":"BL-160x600","children":[]},{"key":"BL-300x600","width":"300","height":"600","url":"/banners/BL-300x600/","pluginType":"eleventy-navigation","title":"BL-300x600","children":[]}].forEach(function(banner) {
+[{"key":"BL-160x600","width":"160","height":"600","url":"/banners/BL-160x600/","pluginType":"eleventy-navigation","title":"BL-160x600","children":[]}].forEach(function(banner) {
   const reload = document.querySelector(`button#${banner.key}`);
   reload.addEventListener("click", function() {
     document.querySelector(`iframe#${banner.key}`).contentWindow.location.reload();
