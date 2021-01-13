@@ -16,9 +16,14 @@
   const bannerSlugs = [];
 
 //? - Set the variables for the desired size(s), and version(s) to be added
-  rl.question("New Sizes: ", function(sizes) {
-      rl.question("New Versions: ", function(versions) {
-          console.log(`${sizes},  ${versions}`);
+  rl.question(`NEW SIZES (>1 entries separate with a space & use WIDTHxHEIGHT format (300x250 300x600) : `, function(sizes) {
+      rl.question(`NEW VERSIONS : (>1 entries separate with a space (VerA VerB) : `, function(versions) {
+        
+        sizes = [...sizes.match(/(\w)+/g)];
+        
+        versions = [...versions.match(/(\w)+/g)];
+
+        console.log(sizes,  versions);
 
 //? - Combine sizes and versions into an array of slugs, joining version and size for each iteration 
           setSlugs(sizes, versions);
@@ -33,7 +38,8 @@
   function setSlugs(sizes,versions) {
     if (!Array.isArray(sizes)) {sizes = [sizes]}
     if (!Array.isArray(versions)) {versions = [versions]}
-    sizes.forEach(size => versions.forEach(version => bannerSlugs.push(version + size)))
+    sizes.forEach(size => versions.forEach(version => bannerSlugs.push(`${version}-${size}`)))
+    console.log(bannerSlugs)
   }
 
   function loopBanners(banners) {
@@ -56,6 +62,7 @@
       newBannerFromTemplate(slug);
       console.log('Directory created successfully!', location); 
     }); 
+    // console.log('Directory created successfully!', location); 
   }
 
   function newBannerFromTemplate(slug) {
@@ -69,39 +76,42 @@
         fillBannerVariables(slug, dest);
       }  
     })
+    // fillBannerVariables(slug, dest);
+    // console.log('Banner File created successfully!', dest); 
   }
   
   function fillBannerVariables(slug, src) {
+    const search = [...slug.matchAll(/(?<version>.+)-(?<width>\d+)x(?<height>\d+$)/g)][0];
+    const version = search[1];
+    const width = search[2];
+    const height = search[3];
+
     fs.readFile(src, 'utf8', (err, data) => {
       if (err) return console.log(err);
-
-      const search = [...slug.matchAll(/(?<version>.+)-(?<width>\d+)x(?<height>\d+$)/g)][0];
-      const version = search[1];
-      const width = search[2];
-      const height = search[3];
 
       var fileContents = data.replace(/\$\$version/g, version);
       fileContents = fileContents.replace(/\$\$width/g, width);
       fileContents = fileContents.replace(/\$\$height/g, height);
 
       fs.writeFile(src, fileContents, 'utf8', function (err) {
-          if (err) return console.log(err);
-          console.log('written to ', src);
-
+        if (err) return console.log(err);
+        console.log('written to ', src);
+        console.log(version, width, height, '< this banner', src)
       });
-  });
+    });
+  }
+
 
 
   function newAnimationScript(slug) {
     const src = "./src/_templates/bannerAnimationScriptTemplate.njk";
-    const dest = `./src/_includes/animationScripts/${slug}.njk`;
+    const dest = `./src/_includes/animationScripts/${slug}-script.njk`;
     fs.copyFile( src, dest, fs.constants.COPYFILE_EXCL, (err) => { 
       if (err) { console.log("Error Found:", err); } 
       else { 
         console.log('new animation script file created ', dest)
       }  
     })
-  }
 
   }
 
