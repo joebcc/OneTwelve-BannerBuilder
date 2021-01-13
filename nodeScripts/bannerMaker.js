@@ -66,7 +66,7 @@
   }
 
   function newBannerFromTemplate(slug) {
-    const src = "./src/_templates/bannerTemplate.njk";
+    const src = "./src/_templates/bannerTemplate.njk_";
     const dest = `./src/banners/${slug}.njk`;
     fs.copyFile( src, dest, fs.constants.COPYFILE_EXCL, (err) => { 
       if (err) { console.log("Error Found:", err); } 
@@ -104,8 +104,8 @@
 
 
   function newAnimationScript(slug) {
-    const src = "./src/_templates/bannerAnimationScriptTemplate.njk_";
-    const dest = `./src/banners/${slug}/${slug}-script.njk_`;
+    const src = "./src/_templates/bannerAnimationScriptTemplate.js";
+    const dest = `./src/banners/${slug}/${slug}-script.js`;
     fs.copyFile( src, dest, fs.constants.COPYFILE_EXCL, (err) => { 
       if (err) { console.log("Error Found:", err); } 
       else { 

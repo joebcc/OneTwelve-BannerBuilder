@@ -1,4 +1,4 @@
-<script>
+
     // === Load ===============================
     tl
       .set("#bg", { scale: 2, transformOrigin: 'center', x: '-=80', y: '+=100', })
@@ -28,4 +28,3 @@
       .to("#cta-glow", {x: '+=300', duration: .6, ease: 'ease-out'}, "_f3+=2")
 
 
-</script>
