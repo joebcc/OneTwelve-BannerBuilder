@@ -10,7 +10,8 @@
     "watch:eleventy": "postcss src/scss/tailwind.css > src/css/tailwind.css && eleventy --serve",
     "build:eleventy": "NODE_ENV=production postcss src/scss/tailwind.css > src/css/tailwind.css && eleventy",
     "start": "npm-run-all clean build:sass --parallel watch:*",
-    "build": "npm-run-all clean build:*"
+    "build": "npm-run-all clean build:*",
+    "addbanners": "node nodeScripts/bannerMaker.js"
   },
   "keywords": [],
   "author": "",

@@ -1,9 +1,9 @@
 ---
-bannerWidth: "300" 
-bannerHeight: "600" 
-bannerVersion: "BL"
-svg: "/src/svgs/BL-300x600.svg"
-animationScript: "animationScripts/BL-300x600.njk" 
+bannerWidth: "$$width" 
+bannerHeight: "$$height" 
+bannerVersion: "$$version"
+svg: "/src/svgs/$$version-$$widthx$$height.svg"
+animationScript: "animationScripts/$$version-$$widthx$$height.njk" 
 
 
 
@@ -25,8 +25,6 @@ eleventyComputed:
     overflow: visible;
     {# margin-top: -164.9px;
     margin-left: -77px; #}
-    margin-top: -11.948px;  
-    margin-left: -340.031px; 
   }
 </style>
 
@@ -35,7 +33,6 @@ eleventyComputed:
      {{svg | svgContents | safe}}
   </a>
 </div>
-
 
 {% include "scripts/_GlobalAnimationDefs.njk"  %}
 {% include animationScript %}

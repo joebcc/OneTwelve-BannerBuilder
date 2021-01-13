@@ -11,7 +11,14 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("./src/css");
     eleventyConfig.addPassthroughCopy("./src/static");
     eleventyConfig.addPassthroughCopy("./src/js");
-    eleventyConfig.addPassthroughCopy("./src/banners");
+    eleventyConfig.addPassthroughCopy("./src/banners/**/*.png");
+    eleventyConfig.addPassthroughCopy("./src/banners/**/*.jpg");
+    eleventyConfig.addPassthroughCopy("./src/banners/**/*.jpeg");
+    eleventyConfig.addPassthroughCopy("./src/banners/**/*.gif");
+    eleventyConfig.addPassthroughCopy("./src/banners/**/*.PNG");
+    eleventyConfig.addPassthroughCopy("./src/banners/**/*.JPG");
+    eleventyConfig.addPassthroughCopy("./src/banners/**/*.JPEG");
+    eleventyConfig.addPassthroughCopy("./src/banners/**/*.GIF");
     
     // add naviagtion plugin
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
