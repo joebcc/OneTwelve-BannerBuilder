@@ -1,0 +1,21 @@
+---
+layout: "base.njk"
+---
+<style>
+iframe {
+  width: 100%;
+}
+</style>
+
+{% set navPages = collections.all | eleventyNavigation %}
+<ul class="flex flex-col justift-center items-center text-center text-2xl">
+{%- for entry in navPages %}
+  <li class="mb-24 pt-8" >
+    <a href="{{ entry.url | url }}">{{ entry.key }}</a>
+
+    <iframe src="{{ entry.url | url }}" height="{{ entry.height }}"/>
+  </li>
+{%- endfor %}
+
+
+</ul>
