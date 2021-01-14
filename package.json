@@ -9,6 +9,7 @@
     "build:sass": "sass src/scss:public/css",
     "watch:eleventy": "postcss src/scss/tailwind.css > src/css/tailwind.css && eleventy --serve",
     "build:eleventy": "NODE_ENV=production postcss src/scss/tailwind.css > src/css/tailwind.css && eleventy",
+    "build:zips": "node nodeScripts/compressNCheck.js",
     "start": "npm-run-all clean build:sass --parallel watch:*",
     "build": "npm-run-all clean build:*",
     "addbanners": "node nodeScripts/bannerMaker.js"
@@ -29,6 +30,7 @@
   },
   "dependencies": {
     "@11ty/eleventy": "^0.11.1",
+    "adm-zip": "^0.5.1",
     "clean-css": "^4.2.3",
     "npm-run-all": "^4.1.5",
     "sass": "^1.30.0"
