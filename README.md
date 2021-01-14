@@ -18,15 +18,15 @@ After adding new banners using the `addbanners` script the `/banners` folder wil
 
 By default, the banner template looks for an svg that matches the  default naming convention used within this tool `{BannerVersion}-{BannerWidth}x{BannerHeight}` however this can be altered by adjusting a banners .njk template (found directly in `/banners`), by altering the `svg` data point at the top of the file.
 
-## Controlling animations for individual banners
-
-Each banner has a file ending in `-script.njk` within it's folder , the folder 
-
 ## Setting global variables + css
 
 Global animation variables can be set in `src/_includes/scripts/_GlobalAnimationDefs.njk` which is by default brought in to every banner.
 
 Global CSS can be set in `/src/_includes/scripts/main.css` which is by default brought in to every banner.
+
+## Controlling animations for individual banners
+
+Each banner has a file ending in `-script.njk` within it's folder , the folder 
 
 ## Testing the framework
 

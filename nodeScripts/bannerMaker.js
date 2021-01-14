@@ -25,9 +25,10 @@
 
         console.log(sizes,  versions);
 
-//? - Combine sizes and versions into an array of slugs, joining version and size for each iteration 
+          //? - Combine sizes and versions into an array of slugs, joining version and size for each iteration 
           setSlugs(sizes, versions);
-//? - ForEach iteration
+
+          //? - ForEach iteration
           loopBanners(bannerSlugs);
 
           rl.close();
@@ -44,9 +45,10 @@
 
   function loopBanners(banners) {
     banners.forEach(function(slug) {
-//? - - Populate /banners with a folder with the slug 
+      //? - - Populate /banners with a folder with the slug 
       newFolder(slug);
-//? - - Populate _includes/animationScripts with {slug.njk} copying from a global template
+
+      //? - - Populate _includes/animationScripts with {slug.njk} copying from a global template
       newAnimationScript(slug);
     })
   }
@@ -58,7 +60,8 @@
       if (err) { 
         return console.error(err); 
       } 
-//? - - Populate /banners {slug}.njk copying from a global template
+      
+      //? - - Populate /banners {slug}.njk copying from a global template
       newBannerFromTemplate(slug);
       console.log('Directory created successfully!', location); 
     }); 
@@ -72,7 +75,7 @@
       if (err) { console.log("Error Found:", err); } 
       else { 
         
-//? - - auto-fill variables in each /banners/{slug}.njk 
+        //? - - auto-fill variables in each /banners/{slug}.njk 
         fillBannerVariables(slug, dest);
       }  
     })
@@ -95,8 +98,7 @@
 
       fs.writeFile(src, fileContents, 'utf8', function (err) {
         if (err) return console.log(err);
-        console.log('written to ', src);
-        console.log(version, width, height, '< this banner', src)
+        console.log(version, width, height, 'written to ', src)
       });
     });
   }
@@ -114,12 +116,4 @@
     })
 
   }
-
-// var sizes = process.argv[2],
-//     versions = process.argv[3],
-//     svgData;
-
-
-//? - 
-
 

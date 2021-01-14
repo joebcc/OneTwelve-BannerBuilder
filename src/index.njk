@@ -9,12 +9,16 @@ iframe {
 
 {% set navPages = collections.all | eleventyNavigation %}
 
+
 <ul class="flex flex-col justift-center items-center text-center text-2xl">
 
   {%- for entry in navPages %}
+    {# setting url var, + removing the first '/' in entry.url with replace filter below  #}
+    {% set url =  entry.url | url | replace(r/\//, '') %} 
+
     <li class="mb-24 pt-8" >
-      <a href="{{ entry.url | url }}">{{ entry.key }}</a>
-      <iframe src="{{ entry.url | url }}" height="{{ entry.height }}" id="{{entry.key}}"></iframe>
+      <a href="{{ url }}">{{ entry.key }}</a>
+      <iframe src="{{ url }}" height="{{ entry.height }}" id="{{entry.key}}"></iframe>
       <button id="{{entry.key}}" class="p-4 bg-blue-500">Reload</button>
     </li>
   {%- endfor %}
