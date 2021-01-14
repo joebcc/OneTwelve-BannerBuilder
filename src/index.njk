@@ -1,11 +1,6 @@
 ---
 layout: "base.njk"
 ---
-<style>
-iframe {
-  width: 100%;
-}
-</style>
 
 {% set navPages = collections.all | eleventyNavigation %}
 
@@ -18,8 +13,8 @@ iframe {
 
     <li class="mb-24 pt-8" >
       <a href="{{ url }}">{{ entry.key }}</a>
-      <iframe src="{{ url }}" height="{{ entry.height }}" id="{{entry.key}}"></iframe>
-      <button id="{{entry.key}}" class="p-4 bg-blue-500">Reload</button>
+      <iframe src="{{ url }}" width="{{ entry.width }}" height="{{ entry.height }}" id="{{ entry.key }}"></iframe>
+      <button id="{{ entry.key }}" class="p-4 bg-blue-500">Reload</button>
     </li>
   {%- endfor %}
 
