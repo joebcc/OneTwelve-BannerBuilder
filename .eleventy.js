@@ -9,6 +9,7 @@ module.exports = function(eleventyConfig) {
         return new CleanCSS({}).minify(code).styles;
     });
 
+    eleventyConfig.addWatchTarget("./src/banners/");
     eleventyConfig.addWatchTarget("./src/scss/");
     eleventyConfig.addPassthroughCopy("./src/css");
     eleventyConfig.addPassthroughCopy("./src/static");
@@ -42,9 +43,9 @@ module.exports = function(eleventyConfig) {
         // console.log(process.argv, 'after any build')
         if (process.argv[2] && process.argv[2] === "--serve") {
             // console.log('running only on serve/watch')
-            compressNCheck(bannerslugs);
-        } else {
             console.log(bannerslugs)
+        } else {
+            compressNCheck(bannerslugs);
             // console.log('afterbuild')
         }
 

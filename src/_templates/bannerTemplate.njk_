@@ -3,7 +3,7 @@ bannerWidth: "$$width"
 bannerHeight: "$$height" 
 bannerVersion: "$$version"
 svg: "/src/banners/$$version-$$widthx$$height/$$version-$$widthx$$height.svg"
-animationScript: "./$$version-$$widthx$$height/$$version-$$widthx$$height.njk" 
+animationScript: "./$$version-$$widthx$$height/$$version-$$widthx$$height-script.js" 
 
 
 
