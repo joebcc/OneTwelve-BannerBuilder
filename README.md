@@ -1,4 +1,4 @@
-# OneTwelve-BannerBuilder
+# OneTwelve-BannerBuilder (STILL IN ALPHA)
 
 This is a framework for building banner campaigns in an organized and streamlined manner.
 
