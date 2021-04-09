@@ -30,6 +30,7 @@ module.exports = async function(banners) {
   })();
 
   async function compressFolder(slug, minifiedCount = 0) {
+    // console.log('starting compressFolder', slug, minifiedCount)
     const bannerFolder = `./public/banners/${slug}`
     const zipPath = `./public/banners/${slug}.zip`
     // creating archives
@@ -66,6 +67,7 @@ module.exports = async function(banners) {
   function checkSize(zipPath) {
     const stats = fs.statSync(zipPath);
     const fileSizeInBytes = stats.size;
+    // console.log('checked size', zipPath, fileSizeInBytes)
 
     return fileSizeInBytes;
 
@@ -79,6 +81,7 @@ module.exports = async function(banners) {
     const tempMinPath = pathBase + '-min/'
     const maxFolder = pathBase + '-max/'
     const maxFilePath = maxFolder + filename;
+    // console.log('shuffling', file)
 
     // if no folder for -max yet, create one
     if (!fs.existsSync(maxFolder)) {
@@ -97,6 +100,7 @@ module.exports = async function(banners) {
   }
 
   const deletefolder = async (path) => {
+    console.log('trying to delete', path)
     if (fs.existsSync(path)) {
       fs.rmdir( path, (err) => {
         if (err) throw err;
@@ -127,7 +131,10 @@ module.exports = async function(banners) {
     console.log(data)
     if (alerts[0]) {
       console.log('File Size Alerts ------------------------')
+      console.log(' ------------------------')
       alerts.forEach(alert => console.log(alert, " < check image sizes"))
+      console.log(' ------------------------')
+      console.log(' ------------------------')
     }
   }
 

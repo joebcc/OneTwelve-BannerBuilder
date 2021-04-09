@@ -44,16 +44,19 @@
   }
 
   function loopBanners(banners) {
-    banners.forEach(function(slug) {
+    banners.forEach(async function(slug) {
       //? - - Populate /banners with a folder with the slug 
-      newFolder(slug);
+      await newFolder(slug);
+      
+      //? - - Populate /banners {slug}.njk copying from a global template
+      await newBannerFromTemplate(slug);
 
       //? - - Populate _includes/animationScripts with {slug.njk} copying from a global template
-      newAnimationScript(slug);
+      await newAnimationScript(slug);
     })
   }
 
-  function newFolder(slug) {
+  async function newFolder(slug) {
     const location = './src/banners/' + slug;
     fs.mkdir(location, 
       { recursive: true }, (err) => { 
@@ -61,14 +64,12 @@
         return console.error(err); 
       } 
       
-      //? - - Populate /banners {slug}.njk copying from a global template
-      newBannerFromTemplate(slug);
       console.log('Directory created successfully!', location); 
     }); 
     // console.log('Directory created successfully!', location); 
   }
 
-  function newBannerFromTemplate(slug) {
+  async function newBannerFromTemplate(slug) {
     const src = "./src/_templates/bannerTemplate.njk_";
     const dest = `./src/banners/${slug}.njk`;
     fs.copyFile( src, dest, fs.constants.COPYFILE_EXCL, (err) => { 
@@ -105,7 +106,7 @@
 
 
 
-  function newAnimationScript(slug) {
+  async function newAnimationScript(slug) {
     const src = "./src/_templates/bannerAnimationScriptTemplate.js";
     const dest = `./src/banners/${slug}/${slug}-script.js`;
     fs.copyFile( src, dest, fs.constants.COPYFILE_EXCL, (err) => { 

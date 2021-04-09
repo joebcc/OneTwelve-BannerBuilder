@@ -26,15 +26,27 @@ eleventyComputed:
     {# margin-top: -164.9px;
     margin-left: -77px; #}
   }
+  .bg #paths {
+    opacity: 0;
+  }
 </style>
+
 
 <div id="wrapper" style="visibility: inherit; opacity: 0;" >
   <a href="javascript:window.open(window.clickTag)" class="link">
-     {{svg | svgContents | safe}}
+     <div class="bg">
+      {{ bgsvg | svgContents | safe }}
+     </div>
+     {{ svg | svgContents | safe }}
   </a>
 </div>
 
 <script> 
+  {% include "../js/gsap/CustomEase.min.js"  %}
+
   {% include "scripts/_GlobalAnimationDefs.js"  %}
+
+  {% include "scripts/bgA.js"  %}
+
   {% include animationScript %}
 </script>

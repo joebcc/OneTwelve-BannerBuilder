@@ -1,0 +1,61 @@
+---
+bannerWidth: "160" 
+bannerHeight: "600" 
+bannerVersion: "verA"
+svg: "/src/banners/verA-160x600/verA-160x600.svg"
+animationScript: "./verA-160x600/verA-160x600-script.js" 
+bgsvg: "/src/banners/verA-300x250/bannerA-background.svg"
+
+
+
+layout: "banner.njk"
+eleventyComputed: 
+  slug: "{{bannerVersion}}-{{bannerWidth}}x{{bannerHeight}}"
+  eleventyNavigation: 
+    key: "{{slug}}"
+    width: "{{bannerWidth}}"
+    height: "{{bannerHeight}}"
+---
+
+<style>
+  #wrapper {
+    width: {{bannerWidth}}px;
+    height: {{bannerHeight}}px;
+    background: black;
+  }
+  svg {
+    overflow: visible;
+    position:absolute;
+    {# margin-top: -164.9px;
+    margin-left: -77px; #}
+  }
+  .bg #paths {
+    opacity: 0;
+  }
+  .bg #backgroundA {
+    position: absolute;
+    height: 700px;
+    top: 30px;
+    left: -448px;
+  }
+</style>
+
+
+<div id="wrapper" style="visibility: inherit; opacity: 0;" >
+  <a href="javascript:window.open(window.clickTag)" class="link">
+     <div class="bg">
+      {{ bgsvg | svgContents | safe }}
+     </div>
+     {{ svg | svgContents | safe }}
+  </a>
+</div>
+
+<script> 
+  {% include "../js/gsap/CustomEase.min.js"  %}
+
+  {% include "scripts/_GlobalAnimationDefs.js"  %}
+
+  {% include "scripts/bgA.js"  %}
+
+  {% include animationScript %}
+</script>

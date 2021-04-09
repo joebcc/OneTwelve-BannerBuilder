@@ -1,0 +1,79 @@
+---
+bannerWidth: "300" 
+bannerHeight: "250" 
+bannerVersion: "awareness3"
+svg: "/src/banners/awareness3-300x250/awareness3_300x250.svg"
+animationScript: "./awareness3-300x250/awareness3-300x250-script.js" 
+
+
+
+layout: "banner.njk"
+eleventyComputed: 
+  slug: "{{bannerVersion}}-{{bannerWidth}}x{{bannerHeight}}"
+  eleventyNavigation: 
+    key: "{{slug}}"
+    width: "{{bannerWidth}}"
+    height: "{{bannerHeight}}"
+---
+
+<style>
+  #wrapper {
+    width: {{bannerWidth}}px;
+    height: {{bannerHeight}}px;
+  }
+  svg {
+    overflow: visible;
+    {# margin-top: -164.9px;
+    margin-left: -77px; #}
+  }
+  .bg #paths {
+    opacity: 0;
+  }
+			/* normalize CSS */
+			@font-face {
+				font-family: Gotham-Bold;
+				src: url(Gotham-Bold.otf);
+			}
+      html,
+      body,
+      #wrapper {
+				font-family: Gotham-Bold;
+      }
+
+      #f1 {
+        position: absolute;
+        top: 30px;
+        left: 36px;
+        max-width: 150px;
+        color: white;
+        line-height: 1.1em;
+        font-size: 15.1px;
+      }
+</style>
+
+
+<div id="wrapper" style="visibility: inherit; opacity: 0;" >
+  <a href="javascript:window.open(window.clickTag)" class="link">
+     {{ svg | svgContents | safe }}
+  </a>
+  <div id="f1">
+    <div id="c1" class="">
+      <div class=" personalizedtext" transform="translate(245.81 242.71)">
+      <span class="companymaxwidth">
+        [Company Name Company Name], <br>
+        What Did Equinix Metal Add For Dizzion?
+      </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script> 
+  {% include "../js/gsap/CustomEase.min.js"  %}
+
+  {% include "scripts/_GlobalAnimationDefs.js"  %}
+
+  {# {% include "scripts/bgA.js"  %} #}
+
+  {% include animationScript %}
+</script>

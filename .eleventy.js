@@ -14,6 +14,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("./src/css");
     eleventyConfig.addPassthroughCopy("./src/static");
     eleventyConfig.addPassthroughCopy("./src/js");
+    eleventyConfig.addPassthroughCopy("./src/banners/**/*.otf");
     eleventyConfig.addPassthroughCopy("./src/banners/**/*.png");
     eleventyConfig.addPassthroughCopy("./src/banners/**/*.jpg");
     eleventyConfig.addPassthroughCopy("./src/banners/**/*.jpeg");

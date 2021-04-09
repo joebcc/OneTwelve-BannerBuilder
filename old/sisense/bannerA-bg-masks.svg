@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1110.4 698.25"> 
+  <defs>
+    <!-- the mask is relative to the object so it's easy to set it's size  -->
+    
+ 		<mask id="bgmask" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
+    <linearGradient id="grad" gradientUnits="objectBoundingBox">
+      <stop stop-color="white" offset="1%"/>
+      <stop stop-color="black" offset="99%"/>
+    </linearGradient>
+    <circle cx="500" cy="350" r="500" id="circle" fill="url(#grad)"/>
+  	</mask>
+  </defs>
+</svg> 

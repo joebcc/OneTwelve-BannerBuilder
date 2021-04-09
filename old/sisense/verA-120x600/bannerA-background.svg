@@ -1,0 +1,80 @@
+<svg id="backgroundA" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1110.4 698.25">
+  <defs>
+    <style>
+      .cls-1 {
+        isolation: isolate;
+      }
+      .cls-2 {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 1.1px;
+      }
+    </style>
+  </defs>
+  <g id="image">
+    <!-- <image id="bg2" class="cls-1" width="1110" height="698" xlink:href="bannerA-background1.jpg" style="opacity:.2" /> -->
+    <image id="bg" class="cls-1" width="1110" height="698" xlink:href="bannerA-background1.jpg"/>
+    <image id="person" class="cls-1" width="127" height="389" transform="translate(464.55 188.11)" xlink:href="bannerA-background2.png"/>
+    <image id="screenglow" class="cls-1" width="135" height="153" transform="translate(466.95 196.36)" xlink:href="bannerA-background3.png"/>
+  </g>
+  <g id="lightshape">
+    <image id="shape-lines" class="cls-1" width="538" height="348" transform="translate(232.27 232.95)" xlink:href="bannerA-background4.png"/>
+    <image id="shape-circ" class="cls-1" width="441" height="319" transform="translate(376.06 216.49)" xlink:href="bannerA-background5.png"/>
+  </g>
+  <g id="paths">
+	<path id="straight-10o" class="st0" d="M327.4,343.5c0,0,204.3,40.1,204.3,40.1"/>
+    <path id="straight-9o" class="st0" d="M256.4,385.1c45-0.1,227.4-0.5,275.8-0.6"/>
+    <path id="straight-7o" class="st0" d="M531.9,385.1L359.5,502.4"/>
+    <path id="straight-5o" class="st0" d="M648.5,558.7c0,0-116.6-173.6-116.6-173.6"/>
+    <path id="straight-4o" class="cls-2" d="M736,423.72,568.56,390.54"/>
+	  <path id="right-sm-circ" class="st0" d="M581.4,458.9c40.5-27.5,51.1-82.9,23.8-123.6"/>
+
+    <path id="main-circ" class="st0" d="M508.1,269.3c63.4-13,125.5,28.1,138.6,92c26,115.6-125.7,191-201.7,102.6C384.3,399.7,420.6,284.8,508.1,269.3z"/>
+  </g>
+
+<g id="lightspots">
+	<g id="lightbeam-10o">
+    <image style="overflow:visible;enable-background:new    ;" width="19" height="19" id="light_beam_7_" xlink:href="bannerA-background6.png"  transform="matrix(-0.9585 -0.2358 0.2358 -0.9585 334.3731 354.411)">
+		</image>
+	</g>
+		
+	<g id="lightbeam-9o">
+			<image style="overflow:visible;enable-background:new    ;" width="19" height="19" id="light_beam_1_" xlink:href="bannerA-background6.png"  transform="matrix(-0.9871 0 0 -0.9871 266.8268 394.0832)">
+		</image>
+	</g>
+	<g id="lightbeam-7o">
+    <image style="overflow:visible;enable-background:new    ;" width="19" height="19" id="light_beam_2_" xlink:href="bannerA-background6.png"  transform="matrix(-0.751 0.6407 -0.6407 -0.751 374.8361 503.7546)">
+		</image>
+	</g>
+	<g id="lightbeam-5o">
+    <image style="overflow:visible;enable-background:new    ;" width="19" height="19" id="light_beam_4_" xlink:href="bannerA-background6.png"  transform="matrix(0.9504 0.2667 -0.2667 0.9504 732.7628 415.0051)">
+		</image>
+	</g>	
+  <g id="lightbeam-4o">
+		
+			<image style="overflow:visible;enable-background:new    ;" width="19" height="19" id="light_beam_3_" xlink:href="bannerA-background6.png"  transform="matrix(0.5481 0.8209 -0.8209 0.5481 650.7197 545.3729)">
+		</image>
+
+	</g>
+	
+	<g id="lightbeam-sm-circ">
+		
+			<image style="overflow:visible;enable-background:new    ;" width="19" height="19" id="light_beam_8_" xlink:href="bannerA-background6.png"  transform="matrix(-0.3872 -0.908 0.908 -0.3872 603.2899 348.5153)">
+		</image>
+		
+	</g>
+
+	<g id="lightbeam-main-circR">
+    <image style="overflow:visible;enable-background:new    ;" width="19" height="19" id="light_beam" xlink:href="bannerA-background6.png"  transform="matrix(0.9871 0 0 0.9871 493.4034 261.6097)">
+		</image>
+	</g>
+</g>
+<g id="lighting">
+  
+  <image style="overflow:visible;" width="71" height="147" id="J8lmTF_2_" xlink:href="lighting.png"  transform="matrix(0.24 0 0 0.24 512.6349 231.6008)">
+  </image>
+  <image style="overflow:visible;" width="71" height="147" id="J8lmTF_2_" xlink:href="lighting.png"  transform="matrix(0.24 0 0 0.24 512.6349 231.6008)">
+  </image>
+</g>
+</svg>
